@@ -1,0 +1,33 @@
+<div style="font-family: Arial, sans-serif; color: #333; margin: 0 auto; max-width: 600px; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    <h1 style="font-size: 24px; color: #4CAF50; text-align: center; margin-bottom: 10px;">¡Gracias por preferir nuestra tienda!</h1>
+    <h3 style="font-size: 18px; color: #555; text-align: center; margin-bottom: 20px;">Te hemos enviado un email con los datos de tu compra.</h3>
+
+    <div style="margin-bottom: 20px;">
+        <strong style="display: block; margin-bottom: 5px; font-size: 16px;">Email del comprador:</strong>
+        {{#if user}}
+            <p style="font-size: 16px; color: #333; text-align: center; margin: 0;">{{user.email}}</p>
+        {{/if}}
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <strong style="display: block; margin-bottom: 5px; font-size: 16px;">Orden de compra número:</strong>
+        {{#each ticket}}
+            <p style="font-size: 16px; color: #333; text-align: center; margin: 0;">{{code}}</p>
+        {{/each}}
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <strong style="display: block; margin-bottom: 5px; font-size: 16px;">La compra fue realizada en la fecha:</strong>
+        {{#each ticket}}
+            <p style="font-size: 16px; color: #333; text-align: center; margin: 0;">{{purchase_datetime}}</p>
+        {{/each}}
+    </div>
+
+    <div style="margin-bottom: 20px;">
+        <strong style="display: block; margin-bottom: 5px; font-size: 16px;">Costo total de la compra:</strong>
+        <span style="font-size: 16px; font-weight: bold;">$</span>
+        {{#each ticket}}
+            <p style="font-size: 16px; color: #333; text-align: center; margin: 0;">{{amount}}</p>
+        {{/each}}
+    </div>
+</div>
